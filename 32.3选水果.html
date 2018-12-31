@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<form action="javascript:" method="post">
+			<select name="" id="s1" size="4" multiple>
+				<option value="">篮球</option>
+				<option value="">足球</option>
+				<option value="">排球</option>
+				<option value="">网球</option>
+			</select>
+			
+			<input type="button" id="btn" value=">>" />
+			
+			<select name="" id="s2" size="4" multiple>
+				
+			</select>
+		</form>
+		
+		<script type="text/javascript">
+			btn=document.getElementById('btn')
+			s1=document.getElementById('s1')
+			s2=document.getElementById('s2')
+			
+			opts=s1.options;
+			btn.onclick=function(){
+				idx=s1.selectedIndex;
+				s2.add(opts[idx]);
+			}	
+		</script>
+	</body>
+</html>

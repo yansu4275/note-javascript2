@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+		*{
+			padding: 0;
+		}
+			#aaa{
+				width: 100px;
+				height: 100px;
+				background: orange;
+				position: absolute;
+				top: 0px;
+				left: 0px;
+				/*overflow: hidden;*/
+			}
+			img{
+				display: block;
+			}
+		</style>
+	</head>
+	<body>
+		<p>div 中单独放一个图片时，div 会多出 5px 外边距，可以给图片设置display:block，或者给div设置 overflow:hidden</p>
+		<button id="bbb">重启</button>
+		<div id="aaa">
+			<img src="img/100x100.png"/>
+		</div>
+		
+		
+		<script type="text/javascript">
+			aaa=document.getElementById('aaa');
+			bbb=document.getElementById('bbb');
+			screenHeight=document.documentElement.clientHeight; //屏幕高度
+			imgHeight=100;                            			//图片高度
+			diffHeight=screenHeight-imgHeight;                  //屏幕和图片的高度差
+			
+			function abc(){
+				ys=0;
+				yv=1;  
+				aaa1=setInterval(function(){
+					ys+=yv; 
+					if (ys>=diffHeight) {
+						ys=diffHeight;								//当图片到达页面底部
+						yv=-yv;										//速度变成负的，图片向上走
+					}
+					if(ys<=0){										//当图片到达页面顶部
+						yv=-yv										//速度又变成正的，向下走		
+					}
+					aaa.style.top=ys+'px'
+				},10)
+				/*上下弹力球*/
+				/***********************************************************************/
+				
+				
+				screenWidth=document.documentElement.clientWidth; 	//屏幕宽度
+				imgWidth=100;                            			//图片宽度
+				diffWeight=screenWidth-imgWidth;                  	//屏幕和图片的宽度差
+				
+				xs=0;
+				xv=1;  
+				aaa2=setInterval(function(){
+					xs+=xv; 
+					if (xs>=diffWeight) {
+						xs=diffWeight;								//当图片到达页面右部
+						xv=-xv;										//速度变成负的，图片向左走
+					}
+					if(xs<=0){										//当图片到达页面左部
+						xv=-xv										//速度又变成正的，向右走	
+					}
+					aaa.style.left=xs+'px'
+				},10)
+				/*左右弹力球*/
+				/***********************************************************************/
+			}
+			abc()
+			
+			var a= 1;
+			bbb.onclick=function(){
+				if (a%2==1) {
+					clearInterval(aaa1)
+					clearInterval(aaa2)
+				} else{
+					abc()
+				}
+				a+=1
+			}
+			
+			
+		</script> 
+	</body>
+</html>

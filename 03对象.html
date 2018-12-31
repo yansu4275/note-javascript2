@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>js 对象————aaa=new Object();</p>
+		<script type="text/javascript">
+			//定义变量
+			aaa=new Object();
+			aaa.name='use1';
+			aaa.age='20';
+			aaa.sex='man';
+			aaa.say=function(){
+				document.write('我是 use1');
+			};
+			
+			//使用变量
+			aaa.say()
+			
+		</script>
+		
+		<hr />
+		<!--*********************************************************************-->
+		
+		<p>DOM 对象</p>
+		<div id="bbb">000</div>
+		
+		<script type="text/javascript">
+			dom1=document.getElementById('bbb');
+			
+		</script>
+		
+		
+		
+		<hr />
+		<!--*********************************************************************-->
+		
+		<p>json 对象</p>
+		
+		<script type="text/javascript">
+		//对 ccc 定义
+			ccc={
+				'name':'use1',
+				'age':'20',
+				'say':function(){
+					document.write('你好，我是' + this.name + '，' + ccc.age + '岁')
+					
+				}
+			};
+			//调用 aaa 
+			ccc.say()
+		</script>
+	</body>
+</html>

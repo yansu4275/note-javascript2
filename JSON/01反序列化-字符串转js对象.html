@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>反序列化：在接受服务器数据时一般是字符串，将接受的字符串装换成js对象</h2>
+		<h3>----JSON.parse(text, reviver)</h3>
+		<script type="text/javascript">
+			//字符串
+			var json1 = '{ "name":"严肃", "gender":"男", "job":"前端" }'
+			var json2 = JSON.parse(json1);
+			
+			document.write(json1.name)
+			document.write(json2.name)
+			console.log(json2)
+			
+			
+		</script>
+	</body>
+</html>
+ 

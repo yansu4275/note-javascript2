@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		1111111111111111111111111111111111111111111111111111111111111111111111111111111
+		<p>获得焦点------------------------------onfocus</p>
+		<form action="" method="post">
+			<input type="text" value="选中边框变蓝色,文字消失" id="aaa"/>
+			<input type="text" value="自带橘黄色" id="bbb"/>
+		</form>
+		<script type="text/javascript">
+			aaa=document.getElementById('aaa');
+			aaa.onfocus=function(){
+				this.style.outlineColor='blue';
+				this.value='';
+			}
+		</script>
+		<hr />
+		<!--**************************************************************************-->
+		
+		22222222222222222222222222222222222222222222222222222222222222222222222222222222
+		<p>失去焦点--------------------------------onblur</p>
+		<form action="" method="post">
+			<input type="text" value="失去焦点后表单变色" id="ccc"/>
+		</form>
+		<script type="text/javascript">
+			ccc=document.getElementById('ccc');
+			ccc.onblur=function(){
+				val=this.value;
+				ccc.style.background='orange'
+			}
+		</script>		
+		<hr />
+		<!--**************************************************************************-->
+		
+		33333333333333333333333333333333333333333333333333333333333333333333333333333333
+		<p>当表单元素值发生改变-----------------onchange</p>
+		<form action="" method="post">
+			<select name="" id="s1">
+				<option value="选择城市">选择城市</option>
+				<option value="北京">北京</option>
+				<option value="上海">上海</option>
+				<option value="南京">南京</option>
+			</select>
+			<p>你选的城市是：<span id="s2"></span></p>
+		</form>
+		<script type="text/javascript">
+			s1obj=document.getElementById('s1');
+			s2obj=document.getElementById('s2');
+			
+			s1obj.onchange=function(){
+				s1val=this.value;
+				s2obj.innerHTML=s1val;
+			}
+		</script>		
+		<hr />
+		<!--**************************************************************************-->
+		
+		44444444444444444444444444444444444444444444444444444444444444444444444444444444
+		<p>当表单内容被选中时--------------------onselect</p>
+		<form action="" method="post">
+			<input type="text" value="当表单内容被选中时" id="ddd"/>
+		</form>
+		<script type="text/javascript">
+			ddd=document.getElementById('ddd');
+			ddd.onselect=function(){
+				this.style.background='orange'
+			}
+		</script>		
+		<hr />
+		<!--**************************************************************************-->
+		
+		<p>当表单被提交的时候--------------------onsubmit</p>
+		<form action="go.php" method="post" id="eee">
+			<input type="text" value="当表单提交的时候"/>
+			<input type="submit" name="" value="提交" />
+		</form>
+		<script type="text/javascript">
+			eee=document.getElementById('eee');
+			eee.onsubmit=function(){
+				r=confirm('是否确认提交？');
+				if (!r) {                             //不提交****************
+					return false;
+				}
+			}
+		</script>		
+		<hr />
+		<!--**************************************************************************-->
+		
+		<p>当清除表单数据时----------------------onreset</p>
+		<form action="go.php" method="post" id="fff">
+			<input type="text" value="清除后回到默认值"/>
+			<input type="reset" name="" value="清除" />
+		</form>
+		<script type="text/javascript">
+			fff=document.getElementById('fff');
+			fff.onreset=function(){
+				r=confirm('确认清除表单数据吗？');
+				if (!r) {                             //不清除****************
+					return false;
+				}
+			}
+		</script>		
+		<hr />
+		<!--**************************************************************************-->
+		
+	</body>
+</html>

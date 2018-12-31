@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>和 JSON.parse() 差不多</h3>		
+		<script type="text/javascript">
+			var text = '{"name":"严肃","gender":"男","job":"前端"}'
+			
+			var json1 = eval("(" + text + ")")
+			
+			document.write(json1.name + json1.gender + json1.job)
+		</script>
+	</body>
+</html>

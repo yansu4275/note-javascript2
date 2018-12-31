@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			#aaa{
+				position: fixed;
+				bottom: 0px;
+				left: 0px;
+				display: none;
+				cursor: pointer;
+			}
+		</style>
+	</head>
+	<body>
+		<p>1.浏览器的高-------document.documentElement.clientHeight</p>
+		
+		<p>2.屏幕的总高度-------document.documentElement.scrollHeight</p>
+		<p>
+			3.滚动的高度<br />
+			---------------------------document.documentElement.scrollTop<br />
+			---------------------------document.body.scrollTop<br />
+		</p>
+		<!--*****************************************************************************-->
+		
+		<button id="aaa">回到顶部</button>
+		<script type="text/javascript">
+			aaa=document.getElementById('aaa');
+			
+			window.onscroll=function(){
+				st=document.documentElement.scrollTop;
+				if (st>200) {
+					aaa.style.display='inline-block'
+				} else{
+					aaa.style.display='none'
+				}
+			}
+			aaa.onclick=function(){
+				document.documentElement.scrollTop=0
+			}
+			
+			
+			//判断会否是谷歌浏览器**************************************************
+			function isChrome(){
+				nu=navigator.userAgent;
+				if (nu.match(/chrome/i)) {
+					return true
+				}else{
+					return false;
+				}
+			}
+			
+////**********************************************************************************			
+//			window.onscroll=function(){
+//				if (isChrome()) {
+//					//谷歌
+//					st=document.body.scrollTop;
+//					if (st>0) {
+//						aaa.style.background='red'
+//					} else{
+////						aaa.style.display='none'
+//					}
+//				} else{
+//					//非谷歌
+//					st=document.documentElement.scrollTop;
+//					if (st>100) {
+//						aaa.style.display='inline-block'
+//					} else{
+//						aaa.style.display='none'
+//					}
+//				}
+//			}
+//			
+//			aaa.onclick=function(){
+//				if (isChrome()) {
+//					//谷歌
+//					document.body.scrollTop=0
+//				} else{
+//					//非谷歌
+//					document.documentElement.scrollTop=0
+//				}
+//			}
+		</script>
+		
+		
+		
+		<hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr />		
+		
+		
+	</body>
+</html>

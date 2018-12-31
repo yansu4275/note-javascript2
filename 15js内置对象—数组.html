@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h4>属性-------length</h4>
+		<hr />
+		<hr />
+		<!--************************************************************-->
+		
+		<h3>方法：---★---会改变原数组，慎用</h3>
+		<hr />
+		
+		<h4>join("/")------将数组一个符号连成字符串，对应字符串中的 split</h4>
+		<script type="text/javascript">
+			aaa=['你好','哈喽'];
+			
+			document.write(aaa.join('=') + typeof(aaa.join('=')))
+		</script>
+		<hr />
+		<!--************************************************************-->
+		
+		<h4>pop()---★---将数组最后一个值弹出，并在原数组中删除</h4>
+		<script type="text/javascript">
+			aaa=[111,222,333,444,555];
+			
+			bbb=aaa.pop();
+			document.write('弹出数组最后一个值：'+ bbb + '，剩下的数组：'+aaa)
+		</script>
+		<hr />
+		<!--************************************************************-->
+		
+		<h4>push()---★---从数组最后插入一个值</h4>
+		<script type="text/javascript">
+			aaa=[111,222,333,444,555];
+			
+			bbb=aaa.push(666);
+			document.write('从数组最后插入一个值后的长度'+ bbb+'，数组变为：' +aaa)
+		</script>
+		<hr />
+		<!--************************************************************-->
+		
+		<h4>shift()---★---将数组第一个值弹出，并在原数组中删除</h4>
+		<script type="text/javascript">
+			aaa=[111,222,333,444,555];
+			
+			bbb=aaa.shift();
+			document.write('弹出数组最后一个值：'+ bbb + ',原数组变为：'+aaa)
+		</script>
+		<hr />
+		<!--************************************************************-->
+		
+		<h4>unshift()---★---从数组最前面插入一个值</h4>
+		<script type="text/javascript">
+			aaa=[111,222,333,444];
+			
+			bbb=aaa.unshift(000);
+			document.write('从数组最前面插入一个值后的长度'+ bbb+'，数组变为：' +aaa)
+		</script>
+		<hr />
+		<!--************************************************************-->
+		
+		<h4>splice(a,b)---★---从 a 开始 截取 b 个，原数组改变</h4>
+		<script type="text/javascript">
+			aaa=['aaa','bbb','ccc','ddd','eee'];
+			
+			bbb=aaa.splice(0,1);
+			document.write('从1开始截取2个：'+bbb+'，原数组变为：'+aaa)
+		</script>
+		<hr />
+		<hr />
+		<!--***********************************************************-->
+		<!--***********************************************************-->
+		
+		<h4>reverse()-----翻转数组，原数组也被颠倒</h4>
+		<script type="text/javascript">
+			aaa=[111,222,333];
+			
+			aaa.reverse();
+			document.write('数组翻转'+ aaa)
+		</script>
+		<hr />
+		<!--************************************************************-->
+		
+		<h4>concat()-----连接两个数组变成一个</h4>
+		<script type="text/javascript">
+			aaa=[111,222];
+			bbb=[222,333];
+			
+			ccc=aaa.concat(bbb);
+			document.write(ccc)
+		</script>
+		<hr />
+		<!--************************************************************-->
+		
+		<h4>slice(start,end)------调出从 a 到 b 的数组，不包含 b，原数组不变</h4>
+		<script type="text/javascript">
+			aaa=['aaa','bbb','ccc','ddd','eee'];
+			
+			bbb=aaa.slice(1,4);
+			document.write(bbb)
+		</script>
+		<hr />
+		<!--************************************************************-->
+		
+		<h4>sort()-----数组排序，只用sort只能对数组的开头排序，不能真正按大小</h4>
+		<script type="text/javascript">
+			aaa=[100,20,3,1,200000];
+			
+			bbb=aaa.sort(asc)   //升序------asc
+			function asc(a,b){
+				return a-b
+			}
+			document.write('升序：'+ bbb)
+			
+			ccc=aaa.sort(desc)  //降序-----desc
+			function desc(a,b){
+				return b-a
+			}
+			document.write('降序：'+ccc)
+			
+		</script>
+		
+		<hr />
+		<!--************************************************************-->
+		
+		<p>按年龄</p>
+		 <script type="text/javascript">
+		    var objectList = new Array();
+		    function Persion(name,age){
+		       this.name=name;
+		       this.age=age;
+		    }
+		    objectList.push(new Persion('andy',20));
+		    objectList.push(new Persion('tony',25));
+		    objectList.push(new Persion('jack',20));
+		    objectList.push(new Persion('stone',126));
+		    //按年龄从小到大排序
+		    objectList.sort(function(a,b){
+		       return a.age-b.age
+		    });
+		    for(var i=0;i<objectList.length;i++){
+		        document.write(objectList[i].age + objectList[i].name+'<br/>');
+		    }
+		    console.log(objectList)
+		</script>
+
+		
+		
+		
+		
+		
+	</body>
+</html>

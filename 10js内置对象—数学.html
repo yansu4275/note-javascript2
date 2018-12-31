@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>数学对象</h3>
+		<p>属性：Math.PI————圆周率</p>
+		<script type="text/javascript">
+			document.write(Math.PI)
+		</script>
+		<hr />
+		<!--**********************************************************************-->
+		
+		<p>上一个整数————Math.ceil()</p>
+		<script type="text/javascript">
+			aaa=3.14;
+			document.write(Math.ceil(aaa))
+		</script>
+		<hr />
+		<!--**********************************************************************-->
+		
+		<p>下一个整数————Math.floor()</p>
+		<script type="text/javascript">
+			aaa=3.14;
+			document.write(Math.floor(aaa))
+		</script>
+		<hr />
+		<!--**********************************************************************-->
+		
+		<p>四舍五入—————Math.round()</p>
+		<script type="text/javascript">
+			aaa=3.14;
+			document.write(Math.round(aaa))
+		</script>
+		<hr />
+		<!--*********************************************************************-->
+		
+		<p>0~1随机小数————Math.random()</p>
+		<script type="text/javascript">
+			document.write(Math.random())
+		</script>
+		<hr />
+		<!--*********************************************************************-->
+		
+		<p>最大值———————Math.max()</p>
+		<script type="text/javascript">
+			document.write(Math.max(1,55,99))
+		</script>
+		<hr />
+		<!--*********************************************************************-->
+		
+		<p>最小值———————Math.min()</p>
+		<script type="text/javascript">
+			document.write(Math.min(0.1,1.9,55))
+		</script>
+		<hr />
+		<hr />
+		<!--*********************************************************************-->
+		
+		<h3>从数组中随机取一个值————
+			<script type="text/javascript">
+				arr=['aaa','bbb','ccc','ddd','eee','fff'];
+				
+				rand=Math.random();	   		/*随机取一个小数*/
+				tot=arr.length;        		/*数组长度*/
+				sub=Math.floor(rand*tot);   /*随机取到的数组下标*/
+				
+				document.write(arr[sub])    /*显示这个下标对应的值*/
+			</script>
+		</h3>
+		<hr />
+		<hr />
+		
+	</body>
+</html>

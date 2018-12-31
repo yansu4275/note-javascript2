@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h4>getAttribute('')------获取标签属性值，标准非标准都能获取</h4>
+		<h4>setAttribute('')------修改标签属性值</h4>
+		<p id="aaa" title="this is title!" info="this is info!" age="0123456789" sex="nan">aaaaaaaaaa</p>
+		<p id="bbb"></p>
+		<p id="ccc"></p>
+		<p id="ddd"></p>
+		<p id="eee"></p>
+		
+		<script type="text/javascript">
+			aaa=document.getElementById('aaa')
+			bbb=document.getElementById('bbb')
+			bbb.innerHTML='title 标签属性值：'+ aaa.getAttribute('title');
+			
+			
+			ccc=document.getElementById('ccc')
+			aaa.setAttribute('info','this is info2222222222222222')
+			ccc.innerHTML= 'info 标签修改后的属性值：'+ aaa.getAttribute('info');
+			
+			//通过函数获取标签值
+			ddd=document.getElementById('ddd')
+			function getA(obj,attr){
+				return obj.getAttribute(attr)
+			}
+			ddd.innerHTML='通过函数获取标签属性值：'+ getA(aaa,'age')
+			
+			//通过函数修稿标签值
+			eee=document.getElementById('eee');
+			function setA(obj,attr,value){
+				obj.setAttribute(attr,value)
+			}
+			setA(aaa,'sex','nv')
+			eee.innerHTML='通过函数修改标签属性值：'+ aaa.getAttribute('sex')
+		</script>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h4>获取元素方法</h4>
+		<p>document.getElementById('')</p>
+		<hr />
+		
+		<p>document.getElementsByClassName('')</p>
+		<p class="aaa">getElementsByClassName('') 获取到的是个数组</p>
+		<p class="aaa">通过数组的第几个来分别设置样式</p>
+		<script type="text/javascript">
+			aaa=document.getElementsByClassName('aaa')
+			aaa[0].style.background='skyblue'
+			aaa[1].style.background='orange'
+		</script>
+		<hr />
+		
+		<p>document.getElementsByTagName('')------通过标签名获取</p>
+		<hr />
+		
+		<p>document.getElementsByName('')------通过标签上的 name 名获取</p>
+		<hr />
+		<hr />
+		<!--**************************************************************************-->
+		
+		<h4>document.documentElement</h4>
+		<hr />
+		<hr />getElementsByClassName('aaa')
+		<!--***************************************************************************-->
+		
+		<h4>document.head</h4>
+		<hr />
+		<hr />
+		<!--***************************************************************************-->
+		
+		<h4>document.title</h4>
+		<hr />
+		<hr />
+		<!--***************************************************************************-->
+		
+		<h4>document.body</h4>
+		<hr />
+		<hr />
+		<!--***************************************************************************-->
+		
+	</body>
+</html>

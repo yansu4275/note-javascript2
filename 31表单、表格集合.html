@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<table width="500px" border="1px" cellspacing="0" id='tid'>
+			<tr>
+				<td>001</td>
+				<td>002</td>
+				<td>003</td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>002</td>
+				<td>003</td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>002</td>
+				<td>003</td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>002</td>
+				<td>003</td>
+			</tr>
+			<tr>
+				<td>001</td>
+				<td>002</td>
+				<td>003</td>
+			</tr>
+		</table>
+		<form action="" method="post">
+			第<input type="text" name="" id="row" value="" />行<br />
+			第<input type="text" name="" id="col" value="" />列<br />
+			<input type="button" value="修改" id="changebut"/>
+		</form>
+		<script type="text/javascript">
+			tidobj=document.getElementById('tid');
+			rowobj=document.getElementById('row');
+			colobj=document.getElementById('col');
+			cbutobj=document.getElementById('changebut');
+			
+			function set(i,j){
+				tidobj.rows[i-1].cells[j-1].innerHTML='abcdef'
+			}
+			
+			cbutobj.onclick=function(){
+				rowval=rowobj.value;
+				colval=colobj.value;
+				set(rowval,colval)
+			}
+		</script>
+		<hr />
+		<hr />
+		<!--***************************************************************************-->
+		
+		<h4>通过 value 值直接获取,只能获取 value</h4>
+		<form action="" method="post">
+			<select name="" id="sel">
+				<option value="选择城市">选择城市</option>
+				<option value="北京">北京</option>
+				<option value="上海">上海</option>
+				<option value="南京">南京</option>
+			</select>
+			<input type="button" value="确定" id="okbtn"/>
+			<p>你选择的城市是：<span id="yourcity"></span></p>
+		</form>
+		<script type="text/javascript">
+			okbtn=document.getElementById('okbtn');
+			sel=document.getElementById('sel');
+			yourcity=document.getElementById('yourcity')
+			okbtn.onclick=function(){
+				yourcity.innerHTML=sel.value
+			}
+		</script>
+		<hr />
+		<!--****************************************************************************-->
+		
+		<h4>通过 index 索引获取，不仅能获取value，可以获取所有的属性值</h4>
+		<form action="" method="post">
+			<select name="" id="sel2">
+				<option value="选择城市">选择城市</option>
+				<option value="北京" order='1'>北京</option>
+				<option value="上海" order='2'>上海</option>
+				<option value="南京" order='3'>南京</option>
+			</select>
+			<input type="button" value="确定" id="okbtn2"/>
+			<p>你选择的城市是：<span id="yourcity2"></span></p>
+		</form>
+		<script type="text/javascript">
+			okbtn2=document.getElementById('okbtn2');
+			sel2=document.getElementById('sel2');
+			yourcity2=document.getElementById('yourcity2')
+			okbtn2.onclick=function(){
+				idx=sel2.selectedIndex;
+				opts=sel2.options;  //获取sel2中的所有options，放在一个集合中
+				yourcity2.innerHTML=opts[idx].value +'，城市排名：'+opts[idx].getAttribute('order')
+			}
+		</script>
+		<hr />
+		<!--****************************************************************************-->
+	</body>
+</html>
+

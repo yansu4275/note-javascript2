@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		1111111111111111111111111111111111111111111111111111111111111111111111111111
+		<h4>移入移出变色</h4>		
+		<p class="aaa">0001</p>
+		<p class="aaa">0002</p>
+		<p class="aaa">0003</p>
+		<p class="aaa">0004</p>
+		<script type="text/javascript">
+			aaa=document.getElementsByClassName('aaa');
+			
+			for (i=0;i<aaa.length;i++) {
+				aaa[i].onmouseenter=function(){
+					this.style.background='#ccc'
+				}
+				aaa[i].onmouseleave=function(){
+					this.style.background='white'
+				}
+			}
+		</script>
+		<hr />
+		<!--***********************************************************************-->
+		
+		2222222222222222222222222222222222222222222222222222222222222222222222222222
+		<h4>单击循环变色</h4>		
+		<p class="bbb">0001</p>
+		<p class="bbb">0002</p>
+		<p class="bbb">0003</p>
+		<p class="bbb">0004</p>
+		<script type="text/javascript">
+			bbb=document.getElementsByClassName('bbb');
+			
+			for (i=0;i<bbb.length;i++) {
+				bbb[i].setAttribute('num',0)
+				
+				bbb[i].onclick=function(){
+					num=parseInt(this.getAttribute('num'));
+					if (num%2==0) {
+						this.style.background='orange'
+					} else{
+						this.style.background='red'
+					}
+					this.setAttribute('num',num+1)
+				}
+			}
+		</script>
+		<hr />
+		<!--***********************************************************************-->
+		
+		3333333333333333333333333333333333333333333333333333333333333333333333333333
+		<h4>单击换行号</h4>		
+		<p class="ccc">0001</p>
+		<p class="ccc">0002</p>
+		<p class="ccc">0003</p>
+		<p class="ccc">0004</p>
+		<script type="text/javascript">
+			ccc=document.getElementsByClassName('ccc');
+			
+			for (i=0;i<ccc.length;i++) {
+				ccc[i].setAttribute('num',i+1)
+				
+				ccc[i].onclick=function(){
+					this.innerHTML=this.getAttribute('num')
+				}
+			}
+		</script>
+		<hr />
+		<!--***********************************************************************-->
+		
+		44444444444444444444444444444444444444444444444444444444444444444444444444
+		<h4>全选、反选</h4>
+			<p>
+			<label for="">
+				<input type="checkbox" name="" id="" value="篮球" /> 篮球
+			</label>
+			</p>
+			<p>
+			<label for="">
+				<input type="checkbox" name="" id="" value="足球" /> 足球
+			</label>
+			</p>
+			<p>
+			<label for="">
+				<input type="checkbox" name="" id="" value="排球" /> 排球
+			</label>
+			</p>
+			<p>
+			<label for="">
+				<input type="checkbox" name="" id="" value="网球" /> 网球
+			</label>
+			</p>
+			<p>
+			<label for="">
+				<input type="checkbox" name="" id="" value="乒乓球" /> 乒乓球
+			</label>
+			</p>
+			
+			<p>
+				<button id="all">全选</button>
+				<button id="notall">全不选</button>
+				<button id="unall">反选</button>
+			</p>
+		
+		<script type="text/javascript">
+			all=document.getElementById('all');
+			notall=document.getElementById('notall');
+			unall=document.getElementById('unall');
+			objs=document.getElementsByTagName('input')
+			
+			all.onclick=function(){
+				for (i=0;i<objs.length;i++) {
+					objs[i].checked=true
+				}
+			}
+		</script>
+		
+	</body>
+</html>

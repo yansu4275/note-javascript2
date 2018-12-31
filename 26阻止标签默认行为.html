@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>
+			return false;
+		</h1>
+		
+		<p>a 链接</p>
+		<a href="javascript:" id="aaa">宽度小于600时不跳转，百度</a>
+		<script type="text/javascript">
+			aaa=document.getElementById('aaa')
+			aaa.onclick=function(){
+				w=document.documentElement.clientWidth;
+				if (w<600) {
+					return false;
+				} else{
+					location="https://www.baidu.com/"
+				}
+			}
+		</script>
+		<hr />
+		<!--*****************************************************************************-->
+		
+		<p>form 表单</p>
+		<form action="" id="bbb">
+			<input type="text" name="" id="" value="" />
+			<input type="submit" name="" id="" value="提交" />
+			<input type="reset" name="" id="" value="重置" />
+		</form>
+		<script type="text/javascript">
+			bbb=document.getElementById('bbb');
+			
+			bbb.onsubmit=function(){
+				return false
+			}
+		</script>
+	</body>
+</html>

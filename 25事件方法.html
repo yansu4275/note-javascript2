@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>点击表单自动选中内容
+		111111111111111111111111111111111111111111111111111111111111111111111111111111111111
+		<p>选中----------------------------select()</p>
+		<form action="" method="post">
+			<input type="text" value="点击表单自动选中内容" id="aaa"/>
+		</form>
+		<script type="text/javascript">
+			aaa=document.getElementById('aaa');
+			aaa.onfocus=function(){
+				this.select()
+			}
+		</script>		
+		<hr />
+		<!--******************************************************************************-->
+		
+		222222222222222222222222222222222222222222222222222222222222222222222222222222222222
+		<p>失去焦点-----------------------blur()</p>
+		<form action="" method="post">
+			<input type="text" value="按空格键自动失去焦点" id="bbb"/>
+		</form>
+		<script type="text/javascript">
+			bbb=document.getElementById('bbb');
+			bbb.onkeydown=function(){
+				kc=event.keyCode;
+				document.title=kc;
+				if (kc==32) {
+					this.blur()
+				}
+			}
+		</script>		
+		<hr />
+		<!--******************************************************************************-->
+		
+		333333333333333333333333333333333333333333333333333333333333333333333333333333333333
+		<p>获得焦点-----------------------focus()</p>
+		<form action="" method="post">
+			<input type="text" value="刷新页面后自动获得焦点" id="ccc"/>
+		</form>
+		<script type="text/javascript">
+			ccc=document.getElementById('ccc');
+			ccc.focus()
+		</script>		
+		<hr />
+		<!--******************************************************************************-->
+		
+		44444444444444444444444444444444444444444444444444444444444444444444444444444444444
+		<p>单击-----------------------------click()</p>
+		<form action="" method="post" style="background: #ccc;">
+			<input type="file" value=""/>
+			<input type="file" value="" id="ddd" style="display: none;"/>
+			<div id="up" style="cursor: pointer;"><img src="img/100x100.png"/></div>
+			<input type="text" name="eee" id="eee" value="" />
+			<p>隐藏 file 选择文件，通过点击图片时开通选择文件，并将选择文件的 value 付给另一个表单</p>
+		</form>
+		<script type="text/javascript">
+			ddd=document.getElementById('ddd');
+			eee=document.getElementById('eee')
+			up=document.getElementById('up')
+			
+			up.onclick=function(){
+				ddd.click()
+			}
+			ddd.onchange=function(){
+				// 截取图片文件名的最后部分导入value
+				a=this.value;
+				c=a.lastIndexOf('\\');
+				eee.value=a.substr(c).slice(1)
+			}
+		</script>		
+		<hr />
+		<!--******************************************************************************-->
+		
+		555555555555555555555555555555555555555555555555555555555555555555555555555555555555
+		<p>提交、重置----------------------submit()、reset()</p>
+		<form action="" method="post" id="fff">
+			<input type="text" value=""/>
+		</form>
+		<p>提交、重置按钮在表单外面时，点击按钮触发表单提交、重置</p>
+		<button id="submit">提交</button>
+		<button id="reset">重置</button>
+		<script type="text/javascript">
+			fff=document.getElementById('fff');
+			subobj=document.getElementById('submit')
+			resobj=document.getElementById('reset')
+			
+			subobj.onclick=function(){
+				fff.submit()
+			}
+			resobj.onclick=function(){
+				fff.reset()
+			}
+		</script>		
+		<hr />
+		<!--******************************************************************************-->
+		
+	</body>
+</html>

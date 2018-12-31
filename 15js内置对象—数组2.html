@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>数组词典遍历key和value，先遍历多数组，再分别遍历词典</p>
+		<script type="text/javascript">
+			var aaa =[
+				{name:'user1', job:'job1'},
+				{name:'user2', job:'job2'},
+				{name:'user3', job:'job3'}
+			]
+			
+			for(var i=0; i<aaa.length; i++){
+				var bbb = aaa[i]
+				for(var tmp in bbb){
+					//“键名”
+				    document.write('<p> key： ' + tmp  + '</p>');
+					    
+				    //“键值'
+				    document.write('<p> value： ' + bbb[tmp]  + '</p>');
+			   	}	
+				
+			}
+		</script>
+		
+		
+		
+		<hr />
+		<hr />
+		<p>单数组遍历key和value</p>
+		<script type="text/javascript">
+			var bbb = {name:'user1',job:'job1'}
+				for(var tmp in bbb){
+			    document.write('<p> key： ' + tmp  + '</p>');
+			    document.write('<p> value： ' + bbb[tmp]  + '</p>');
+		   }
+			
+		</script>
+		
+	</body>
+</html>

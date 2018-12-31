@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>延时器</h3>
+		<p>
+			timer=setTimeout(func，300000)<br />
+			clearTimeout(timer)
+		</p>
+		<script type="text/javascript">
+			timer=setTimeout(function(){
+				//间隔一段时间后执行此段代码
+			},3000)
+			
+			clearTimeout(timer)
+		</script>
+		<hr />
+		<!--*********************************************************************-->
+		
+		<span>提交成功，<span id="sid">5</span> 秒后跳转到百度</span>
+		<input type="button" name="aaa" id="aaa" value="不跳转了" />
+		
+		<script type="text/javascript">
+			tobj=setTimeout(function(){
+					location='https://www.baidu.com/'
+			},5000);
+			
+			aaa=document.getElementById('aaa');
+			aaa.onclick=function(){
+				clearTimeout(tobj)
+			}
+		
+		</script>
+	</body>
+</html>
+

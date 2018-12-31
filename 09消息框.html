@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>alert 警告框</h3>
+		<hr />
+		<!--****************************************************************-->
+		
+		
+		<h3>confirm 确认框————true、false</h3>
+		<a href="https://www.baidu.com/" id="aaa">点击跳转百度</a>
+		<script type="text/javascript">
+			aaa = document.getElementById('aaa')
+			
+			aaa.onclick=function(){
+				r=confirm('是否要跳转？');
+				if(!r){
+					return false
+				}
+			}
+		</script>
+		<hr />
+		<!--***************************************************************-->
+		
+		
+		<h3>prompt 输入框</h3>
+		<input type="button" name="bbb" id="bbb" value="prompt 输入框" /><br />
+		
+		<img src="img/a.png" id="ccc"/>
+		<script type="text/javascript">
+			bbb=document.getElementById('bbb');
+			ccc=document.getElementById('ccc');
+			
+			bbb.onclick=function(){
+				r= prompt('输入 a、b、c 切换图片');
+				ccc.src='img/'+ r + '.png';
+			}
+		</script>
+	</body>
+</html>

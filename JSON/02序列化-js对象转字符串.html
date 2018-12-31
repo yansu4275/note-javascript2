@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		
+		<h2>序列化：将js对象转化成json字符串</h2>
+		<h3>JSON.stringify()</h3>
+		<script type="text/javascript">
+			var json1 = {"name":"严肃", "gender":"男", "job":"前端"}
+//			var json1 = [{name:"严肃", gender:"男", job:"前端"}]
+			document.write("序列化前：" + json1  + "<hr/>")
+			
+			var json2 = JSON.stringify(json1)
+			document.write("序列化后：" + json2)
+		</script>
+		
+		
+		<!--*****************************************************************-->
+		<hr />
+		<hr />
+		
+		<h3>序列化会将对象中的函数删掉，打印不显示</h3>
+		<p>var json3 = {"name":"严肃", "fun":function(){return '这是函数';}}</p>
+		
+		<script type="text/javascript">
+			var json3 = {"name":"严肃", "fun":function(){return '这是函数';}}
+			var json4 = JSON.stringify(json3)
+			
+			document.write('不显示函数部分：json4：' + json4 + '<hr/>')
+			
+			json3.fun = json3.fun.toString()
+			var json5 = JSON.stringify(json3)
+			
+			document.write("解决方法：先将函数字符串话，然后再序列化："+"<br/>"+ json5)
+		</script>
+	</body>
+</html>

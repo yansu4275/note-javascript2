@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<p>变量类型：</p>
+		<p>1.字符串————'你好'、'998'</p>
+		<p>2.整型、数值—————998</p>
+		<p>3.浮点型————9.8</p>
+		<p>4.布尔值————真假————true、false————1、0</p>
+		<p>5.数组—————aaa=new Array(1,2,3)/ aaa=[1,2,3,]</p>
+		<p>6.对象—————DOM对象，js对象</p>
+		<p>7.json 对象————aaa={'':'' , '':''}</p>
+		<p>8.NaN</p>
+		<p>9.null</p>
+		<p>10.undefined</p>
+		<hr />
+		<!--*************************************************************************-->
+		
+		<h4>boolean 为 假—false 的情况</h4>
+		<p>空字符串''（只要 '' 里面有东西，不论是空格还是其他，都是为真）、数值为 0 、浮点值为 0.0 、null、NaN、undefined</p>
+		
+		<hr />
+		<!--************************************************************************-->
+		
+		<!--<p>字符串转数值————Number()</p>
+		<script type="text/javascript">
+			aaa = '1234';
+			document.write(Number(aaa)+5)
+		</script>
+		<hr />-->
+		
+		<h4>parseInt 强制转整型***************************小数点后面的去掉</h4>
+		<script type="text/javascript">
+			bbb='12.9px';
+			
+			document.write(parseInt(bbb)+5)
+		</script>
+		<hr />
+		
+		<h4>parseFloat 强制转浮点型************************</h4>
+		<script type="text/javascript">
+			ccc='12.3abc';
+			
+			document.write(parseFloat(ccc)+5)
+		</script>
+		<hr />
+		
+		<h4>String 整型转字符串************************</h4>
+		<script type="text/javascript">
+			ddd=12.34;
+			
+			document.write(String(ddd)+5)
+		</script>
+		<hr />
+		
+		<h4>Boolean 布尔转整型，是整型的为1，不是整型或整型值为 0 的为 0</h4>
+		<script type="text/javascript">
+			eee = 1234;
+			
+//			document.write(Boolean(eee)+5);
+			document.write(!!eee+1);    /*简写 !!eee*/
+		</script>
+		<hr />
+		
+		<h4>eval 执行字符串表达式</h4>
+		<script type="text/javascript">
+			fff = 'a=2+1';
+			
+			document.write(eval(fff)+5)
+		</script>
+		<hr />
+		
+		<h4>json 字符串转 json 对象</h4>
+		<script type="text/javascript">
+			ggg = "{'name':'use1','age':'99'}";
+			hhh = eval('(' + ggg +')');
+			document.write(hhh.name)
+		</script>
+		<hr />
+		
+		
+	</body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>正则表达式————//————w3c手册</h3>
+		<h4>1.修饰符</h4>
+		<h4>2.中括号</h4>
+		<h4>3.元字符</h4>
+		<h4>4.量词</h4>
+		<hr />
+		<!--*******************************************************************-->
+		
+		<p>正则匹配电话号码</p>
+		<script type="text/javascript">
+			phone='13852471862';
+			
+			aaa=phone.match(/^\d{11}$/i);      //从头到尾只有11个数字
+			if (aaa) {
+				document.write('电话号码正确！')
+			} else{
+				document.write('电话号码有误！')
+			}
+		</script>
+		<hr />
+		<!--*******************************************************************-->
+		
+		<p>正则匹配邮箱</p>
+		<script type="text/javascript">
+			email='123456789@qq.com';
+			
+			//任意多个字符 + @ + 任意多个字符 + . + 任意多个字符结尾******************************
+			aaa=email.match(/^\w+@\w+\.\w+$/i); 
+			if (aaa) {
+				document.write('邮箱正确！')
+			} else{
+				document.write('邮箱有误！')
+			}
+		</script>
+		<hr />
+		<!--*******************************************************************-->
+		
+		<p>向后引用高级替换</p>
+		<script type="text/javascript">
+			date='2017/11/11';
+			
+			time=date.replace(/(\d+)\/(\d+)\/(\d+)/g,'$1-$2-$3');
+			document.write(time)
+		</script>
+		
+	</body>
+</html>

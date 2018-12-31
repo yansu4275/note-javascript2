@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h4>1：+-*/%</h4>
+		<hr />
+		<!--********************************************************************-->
+		
+		
+		
+		<h4>2：in——————判断一个属性是不是在一个对象身上</h4>
+		<script type="text/javascript">
+			obj = {'name':'use1', 'age':'99'};
+			
+			document.write('name' in obj);   /*true*/
+			document.write('sex' in obj);    /*false*/
+		</script>
+		
+		<h4>数组中的内容时属性的值，不能用来判断 in ，数组的属性就是下标，从 0 开始</h4>
+		<script type="text/javascript">
+			arr = ['a','b','c']
+			
+			document.write(2 in arr);
+			document.write(3 in arr);
+			document.write('c' in arr);
+		</script>
+		<hr />
+		<!--********************************************************************-->
+		
+		
+		
+		<h4>3：instanceof</h4>
+		<hr />
+		<!--********************************************************************-->
+		
+		
+		
+		<h4>4：delete————删除变量，不能删除局部变量</h4>
+		<script type="text/javascript">
+			aaa = 'aaaaaaaaaaaaa';
+			delete aaa;
+			document.write(aaa); 
+		</script>
+		
+	</body>
+</html>

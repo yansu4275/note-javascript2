@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>typeof() ————判断变量类型</h3>
+		<p>可判断类型：string、number、boolean、object、undefined</p>
+		<script type="text/javascript">
+			aaa = '你好';
+			 
+			if (typeof(aaa)=='string') {
+				document.write('aaa 是字符串：'+aaa)
+			} else{
+				document.write('aaa 不是字符串')
+			}
+			
+		</script>
+		<hr />
+		<!--**********************************************************************-->
+		
+		
+		<h3>arr instanceof Array——测试数组类型</h3>		
+		<p>判断 arr 是否为数组，true 、 false</p>
+		<script type="text/javascript">
+			bbb=[1,2,3];
+			document.write(bbb instanceof Array);
+			
+			ccc='我不是数组';
+			document.write(ccc instanceof Array)
+			
+		</script>
+		<hr />
+		<!--**********************************************************************-->
+		
+		
+		
+</body>
+</html>

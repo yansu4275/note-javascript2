@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<!--只能ie9以下，
+			dom完全解析才会执行
+			里面可以写js代码
+		-->
+		<!--<script src="js/new_file.js" defer></script>-->
+		
+		<!--
+			加载完就执行，只能加载外部脚本
+		-->
+		<!--<script src="js/new_file.js" async="async"></script>-->
+	</head>
+	<body>
+		<p>111</p>
+		<hr />
+		<span>000</span>
+	</body>
+</html>
+<script src="http://libs.baidu.com/jquery/2.0.0/jquery.min.js"></script>
+<script type="text/javascript">
+	var a = new Number(123)
+	var aaa = document.getElementsByTagName('p')[0]
+	var bbb = document.getElementsByTagName('span')[0]
+	aaa.appendChild(a)
+</script>

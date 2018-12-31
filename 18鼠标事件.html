@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h4>js 特效</h4>
+		<p>点击图片切换,if-else循环单击</p>
+		<img src="img/a.png" style="cursor: pointer;" id="aaa"/>
+		<script type="text/javascript">
+			imgaaa=document.getElementById('aaa');
+			
+			i=0;
+			imgaaa.onclick=function(){
+				if (i%2==0) {
+					this.src='img/b.png';
+					this.style.background='orange';
+					this.style.borderRadius="50px"
+				} else{
+					this.src='img/a.png';
+				}
+				i++
+			}
+		</script>
+		<hr />
+		<!--*************************************************************************-->
+		
+		
+		<h4>鼠标事件</h4>
+		<p>onclick--------------点击</p>
+		<hr />
+		
+		<p>ondblclick-----------双击</p>
+		<hr />
+		
+		<p>onmouseenter-------鼠标移入</p>
+		<hr />
+		
+		<p>onmouseleave-------鼠标移出</p>
+		<hr />
+		<!--**************************************************************************-->
+		
+		<p>onmousemove-------鼠标移动</p>
+		<p>event----坐标</p>
+		<p>document.title=------修改页面title</p>
+		
+		<div id="bbb" style="position: absolute;top: 0px;left：0px">★</div>
+		
+		<script type="text/javascript">
+			bbb=document.getElementById('bbb');
+			
+			document.onmousemove=function(event){
+				x=event.clientX;
+				y=event.clientY;
+				document.title=x+'-'+y;
+				
+				bbb.style.top=10+y+'px';
+				bbb.style.left=10+x+'px'
+				
+			}
+		</script>
+	</body>
+</html>

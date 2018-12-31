@@ -1,0 +1,85 @@
+<!DOCTYh4E html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h4>当代码完毕后执行内部代码-----------------------onload</h4>
+		<img src="img/100x100.png" id="aaa"/>
+		<p>图片完全下载完后才能显示高宽：   <span id="bbb"></span></p>
+		<script type="text/javascript">
+			aaa=document.getElementById('aaa');
+			bbb=document.getElementById('bbb')
+			
+			aaa.onload=function(){
+				w=aaa.clientWidth;
+				h=aaa.clientHeight;
+				bbb.innerHTML=w+ '—' +h	
+			}
+		</script>
+		<hr />
+		<!--***********************************************************************-->
+		
+		<h4>当图片加载失败时-----------------------------------onerror</h4>
+		<img src="***********.png" id="ccc"/>
+		<span id="ddd"></span>
+		<script type="text/javascript">
+			ccc=document.getElementById('ccc');
+			ddd=document.getElementById('ddd')
+			
+			ccc.onerror=function(){
+				ddd.innerHTML='图片加载失败'	
+			}
+		</script>
+		<hr />
+		<!--***********************************************************************-->
+		
+		<h4>窗口或框架大小改变时-----------------------------onresize</h4>
+		<script type="text/javascript">
+			function abc(){
+				w=document.documentElement.clientWidth;
+				if (w>1024) {
+					document.body.style.background='orange'
+				} else if(w>600){
+					document.body.style.background='beige'
+				} else{
+					document.body.style.background='olive'
+				}
+			};
+			abc();
+			window.onresize=function(){
+				abc()				
+			}
+		</script>
+		<hr />
+		<!--**********************************************************************-->
+		
+		
+		
+		<h4>当窗口滚动条滚动的时候--------------------------onscroll</h4>
+		<span id="eee">回到顶部</span>
+		<style type="text/css">
+			#eee{
+				background: olivedrab;
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				cursor: pointer;
+			}
+		</style>
+		
+		<hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr /><hr />
+		
+		<script type="text/javascript">
+			eee=document.getElementById('eee');
+			
+			window.onscroll=function(){
+				eee.style.background='red'
+			}
+			eee.onclick=function(){
+				document.body.scrollTop=0
+			}
+		</script>
+	</body>
+</html>

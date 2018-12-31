@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h2>日期对象</h2>
+		<h4>new Date()</h4>
+		<h4>.getFullYear()</h4>
+		<h4>.getMonth()——js 月份是从零开始的，所以获取实际月份时要加 1</h4>
+		<h4>.getDate()</h4>
+		<h4>.getHours()</h4>
+		<h4>.getMinutes()</h4>
+		<h4>.getSeconds()</h4>
+		<hr />
+		<script type="text/javascript">
+			dobj=new Date();
+			year=dobj.getFullYear();
+			month=dobj.getMonth() + 1; /*js 月份是从0开始的，所以要加1*/
+			day=(dobj.getDate()<10?'0'+dobj.getDate():dobj.getDate());
+			
+			week=dobj.getDay()
+			
+			hour=dobj.getHours();
+			minute=dobj.getMinutes();
+			second=dobj.getSeconds();
+			
+			document.write(year+'-'+month+'-'+day+' '+hour+':'+minute+':'+second)
+		</script>
+		<hr />
+		<!--***********************************************************************-->
+		
+		<p>时钟</p>
+		<div id="aaa"></div>
+		<button id='stop'>停止</button>
+		<button id='start'>开始</button>
+		<script type="text/javascript">
+			
+			function shizhong(){
+				otime=new Date();
+				HH=otime.getHours();
+				if(HH<10){
+					HH='0'+HH;
+				}
+				mm=otime.getMinutes();
+				if(mm<10){
+					mm='0'+mm;
+				}
+				ss=otime.getSeconds();
+				if(ss<10){
+					ss='0'+ss;
+				}
+				nowTime=HH+':'+mm+':'+ss;
+				aaa=document.getElementById('aaa');
+				aaa.innerHTML=nowTime;
+			}
+			shizhong();
+			
+			
+//			开始函数
+			function start(){
+				timer=setInterval(shizhong);
+			}
+			
+			start();      /*刷新页面时自动开启*/
+			
+//			停止函数
+			function stop(){
+				clearInterval(timer)
+			}
+						
+//			停止
+			ostop=document.getElementById('stop');
+			ostop.onclick=function(){
+				stop()
+			};
+//			开始
+			ostart=document.getElementById('start');
+			ostart.onclick=function(){
+				start()
+			}
+			
+ 		</script>
+		
+		<hr />
+		<script language="JavaScript" type="text/javascript"> 
+			function GetDateStr(AddDayCount) { 
+				var dd = new Date(); 
+				var y = dd.getFullYear(); 
+				dd.setDate(dd.getDate()+AddDayCount);//获取AddDayCount天后的日期 
+				var m = dd.getMonth()+1;//获取当前月份的日期 
+				var d = dd.getDate(); 
+				return y+"-"+m+"-"+d; 
+			} 
+			document.write("前天："+GetDateStr(-2)); 
+			document.write("<br />昨天："+GetDateStr(-1)); 
+			document.write("<br />今天："+GetDateStr(0)); 
+			document.write("<br />明天："+GetDateStr(1)); 
+			document.write("<br />后天："+GetDateStr(2)); 
+			document.write("<br />大后天："+GetDateStr(3)); 
+		</script> 
+		
+		
+		
+	</body>
+</html>

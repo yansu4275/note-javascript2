@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h3>全局变量</h3>
+		<p>变量定义时前面如果没有 var 则全部都是全局变量</p>
+		<script type="text/javascript">
+			aaa='我是aaa';
+			function aaaname(){
+				document.write(aaa);
+			}
+			aaaname();
+		</script>
+		<hr />
+		
+		
+		<script type="text/javascript">
+			function bbbname(){
+				bbb='我是bbb';
+			};
+			bbbname();
+			document.write(bbb)
+			
+		</script>
+		
+		 
+		
+		<hr />
+		<hr />
+		<hr />
+		<!--*******************************************************************-->
+		
+		
+		<h3>局部变量</h3>
+		<p>只有在函数内部前面带 var 的变量为局部变量，只能在函数内部使用</p>
+		<script type="text/javascript">
+			function cccname(){
+				var ccc = '我是ccc'
+				document.write(ccc)
+			};
+			cccname();
+		</script>
+		
+		
+	</body>
+</html>

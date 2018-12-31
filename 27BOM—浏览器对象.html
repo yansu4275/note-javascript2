@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		11111111111111111111111111111111111111111111111111111111111111111111111111
+		<h4>window 对象</h4>
+		<hr />
+		<!--**********************************************************************-->
+		
+		22222222222222222222222222222222222222222222222222222222222222222222222222
+		<h4>navigator 浏览器特性</h4>
+		<p>属性：userAngent----分辨浏览器</p>
+		<p>谷歌：橘黄色，火狐：浅绿，ie：红色</p>
+		<script type="text/javascript">
+			nav=navigator.userAgent;
+			ntype=nav.match(/chrome|firefox|trident/i);
+			switch(ntype[0]){
+				case 'Chrome':
+					document.body.style.background='#ccc';
+					break;
+				case 'Firefox':
+					document.body.style.background='yellowgreen';
+					break;	
+				case 'Trident':
+					document.body.style.background='red';
+					break;	
+			}
+		</script>
+		<hr />
+		<!--**********************************************************************-->
+		
+		33333333333333333333333333333333333333333333333333333333333333333333333333
+		<h4>screen 屏幕对象</h4>
+		<p>有效高度-----availHeight------<span id="ahei"></span></p>
+		<p>有效宽度-----availWidth-------<span id="awid"></span></p>
+		<p>显示器高度-----height---------<span id='hei'></span></p>
+		<p>显示器宽度-----width----------<span id="wid"></span></p>
+		<script type="text/javascript">
+			ahei=document.getElementById('ahei')
+			awid=document.getElementById('awid')
+			hei=document.getElementById('hei')
+			wid=document.getElementById('wid')
+			
+			ahei.innerHTML=screen.availHeight;
+			awid.innerHTML=screen.availWidth;
+			hei.innerHTML=screen.height;
+			wid.innerHTML=screen.width
+		</script>
+		
+		<hr />
+		<!--**********************************************************************-->
+		
+		444444444444444444444444444444444444444444444444444444444444444444444444444
+		<h4>history 对象</h4>
+		<p>back()---------后退一个历史</p>
+		<p>forward()------前进一个历史</p>
+		<p>go(-1)----后退一个历史。—0——————go(1)----前几一个历史</p>
+		<div>
+			<a href="JavaScript:" id="aid">返回上一页</a>
+			<a href="JavaScript:" id="aid2">返回下一页</a>
+		</div>
+		<script type="text/javascript">
+			aid=document.getElementById('aid')
+			aid2=document.getElementById('aid2')
+			
+			aid.onclick=function(){
+				history.go(-1)
+			}
+			aid2.onclick=function(){
+				history.go(1)
+			}
+		</script>
+		
+		<hr />
+		<!--**********************************************************************-->
+		
+		555555555555555555555555555555555555555555555555555555555555555555555555555
+		<h4>location 地址栏</h4>
+		<p>hash------------------获取 url 里的锚点 #abc</p>
+		<p>host-------------------主机名</p>
+		<p>href-------------------当前的 url 地址</p>
+		<p>pathname-------------index.html 页面的名称</p>
+		<p>protocol--------------协议</p>
+		<p>search----------------参数</p>
+		<p>reload()--------------刷新----------<button id="relo">刷新</button></p>
+		<script type="text/javascript">
+			relo=document.getElementById('relo');
+			relo.onclick=function(){
+				location.reload()
+			}
+		</script>
+		<hr />
+		<!--**********************************************************************-->
+		
+		<h4>document 对象</h4>
+	</body>
+</html>

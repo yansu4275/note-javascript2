@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="js/jquery-3.2.0.js" type="text/javascript" charset="utf-8"></script>
+		<style type="text/css">
+			#aaa{
+				position: absolute;
+				top: 0px;
+				left: 0px;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<p>onkeydown-----键盘按下</p>
+		<p>方向键移动图片</p>
+		
+		<img src="img/100x100.png" id="aaa"/>
+		<script type="text/javascript">
+			aaa=document.getElementById('aaa');
+			
+			s1=0;		//左右距离
+			v1=20;    	//速度
+			
+			s2=0;		//上下距离
+			v2=10;		//上下速度	
+//			if (s1>=document.documentElement.clientWidth) {
+//				s1==document.documentElement.clientWidth
+//			}
+			document.onkeydown=function(event){
+				kc=event.keyCode;   //获取键盘码
+				document.title=kc;   //键盘码在title位置显示
+			
+			
+				switch(kc){
+					case 37:   //左
+						if (s1>0) {
+							s1-=v1;
+							aaa.style.left=s1+'px';
+						}
+						break;
+					case 38:   //上
+						s2-=v2;
+						aaa.style.top=s2+'px'
+					
+						break;
+					case 39:   //右
+						s1+=v1;
+						aaa.style.left=s1+'px';
+						
+						break;
+					case 40:   //下
+						s2+=v2;
+						aaa.style.top=s2+'px'
+					
+						break;
+				}
+			}
+			
+		</script>
+		<hr />
+		<hr />
+		<hr />
+		<hr />
+		<hr />
+		<hr />
+		<hr />
+		<hr />
+		<hr />
+		<!--***************************************************************************-->
+		
+		
+		
+		
+		
+		<p>onkeyup-----键盘弹起</p>
+		<input type="text" name="" id="bbb" value="" />-------
+		<span id="ccc"></span>
+		<script type="text/javascript">
+			bbb=document.getElementById('bbb')
+			
+			bbb.onkeyup=function(){
+				val=this.value;               	//输入的内容
+				val2=val.toUpperCase();			//将内容自动转成大写
+				this.value=val2
+				
+				$('#ccc').text(val2)
+			}
+			
+		</script>
+		<hr />
+		<!--***************************************************************************-->
+	</body>
+</html>
